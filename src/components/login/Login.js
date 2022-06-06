@@ -3,10 +3,11 @@ import "./login.css";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import {useSelector, useDispatch} from "react-redux"
+import {fetchUserData, sendUser} from "../../store/auth-actions"
 
 
 function Login(){
-
+    const dispatch = useDispatch();
     const users = useSelector((state) => state.auth.users)
 
     const [username, setUsername] = useState("")
@@ -22,6 +23,15 @@ function Login(){
         window.location.href = "/sign-up"
     }
 
+    useEffect(() => {
+        dispatch(fetchUserData());
+    
+    }, [dispatch])
+
+  
+
+    
+
     function login(){
 
         if(username !== "" && password !== ""){
@@ -29,7 +39,7 @@ function Login(){
 
             if(foundUser){
                 if(password === foundUser.password) {
-                    const currentUser = foundUser.userId;
+                    const currentUser = foundUser.username;
                     
                     localStorage.setItem('CurrentUser', currentUser)
     
@@ -46,8 +56,6 @@ function Login(){
                 setUserText("User doesn't exist. Please sign up!")
             }
         }
-
-        
     }
 
     

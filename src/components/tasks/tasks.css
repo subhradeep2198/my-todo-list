@@ -1,0 +1,15 @@
+.my-tasks{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box{
+    width: 400px;
+}
+
+.modal-input{
+    margin-top: 1rem;
+    text-align: center;
+}

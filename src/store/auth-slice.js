@@ -4,6 +4,7 @@ const authSlice = createSlice({
     name: 'auth',
     initialState: {
         users: [],
+        changed: false,
     },
     reducers: {
         replaceData(state, action){
@@ -11,13 +12,16 @@ const authSlice = createSlice({
         },
 
         addUser(state, action){
-            
 
             state.users.push({
                 userId: action.payload.userId,
                 username: action.payload.username,
                 password: action.payload.password
             });
+        },
+
+        setChanged(state){
+            state.changed = true
         },
 
     }
