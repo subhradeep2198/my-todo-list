@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from "react";
+import "./App.css"
+import {Router} from "@reach/router"
+import SignUp from "./components/sign-up/SignUp";
+import Login from "./components/login/Login"
+import Tasks from "./components/tasks/Tasks.js"
+import {useSelector, useDispatch} from "react-redux";
+import {sendUser, fetchUserData} from "./store/auth-actions"
 
 function App() {
+
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.auth);
+
+  useEffect(() => {
+       
+    dispatch(fetchUserData());
+  
+  }, [dispatch])
+  
+  
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Login path="/" />
+        <SignUp path="/sign-up" />
+        <Tasks path="/tasks" />
+      </Router>
     </div>
   );
 }
