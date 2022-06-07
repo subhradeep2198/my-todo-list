@@ -3,7 +3,7 @@ import "./login.css";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import {useSelector, useDispatch} from "react-redux"
-import {fetchUserData, sendUser} from "../../store/auth-actions"
+import {fetchUserData} from "../../store/auth-actions"
 
 
 function Login(){

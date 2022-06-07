@@ -13,3 +13,69 @@
     margin-top: 1rem;
     text-align: center;
 }
+
+.modal-select{
+    margin-top: 1rem;
+}
+
+.task-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task-boxes{
+    width: 90%;
+    margin-top: 3%;
+    border-radius: 1rem;
+    padding: 2rem;
+    color: white
+}
+
+.task-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.purple{
+    background-color: #6a5acd;
+}
+
+.blue{
+    background-color: #003366;
+}
+
+.green {
+    background-color: #355e3b;
+}
+
+.button-container{
+    margin-top: 3%;
+    
+}
+
+.move-button{
+    background-color: white;
+    color: black;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.move-button:hover{
+    background-color: beige;
+}
+
+.task-boxes p {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.task-boxes div {
+    display: flex;
+    justify-content: space-between;
+}
